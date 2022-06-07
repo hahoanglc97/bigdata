@@ -11,3 +11,7 @@ data/batches/*
 
 # Spark job results
 data/output/
+
+#elasticsearch
+esdata*
+Icon*

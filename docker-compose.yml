@@ -1,6 +1,7 @@
 version: "3.7"
 services:
   hivemetastore:
+    container_name: hivemetastore
     image: postgres:11.5
     hostname: hivemetastore
     environment:
@@ -25,6 +26,7 @@ services:
       - "livy:172.28.1.6"
 
   master:
+    container_name: spark-master
     image: panovvv/hadoop-hive-spark:2.5.2
 #    build: '../hadoop-hive-spark-docker'
     hostname: master
@@ -70,6 +72,7 @@ services:
       - "livy:172.28.1.6"
 
   worker1:
+    container_name: spark-worker-1
     image: panovvv/hadoop-hive-spark:2.5.2
 #    build: '../hadoop-hive-spark-docker'
     hostname: worker1
@@ -104,6 +107,7 @@ services:
       - "livy:172.28.1.6"
 
   worker2:
+    container_name: spark-worker-2
     image: panovvv/hadoop-hive-spark:2.5.2
 #    build: '../hadoop-hive-spark-docker'
     hostname: worker2
@@ -139,6 +143,7 @@ services:
       - "livy:172.28.1.6"
 
   livy:
+    container_name: spark-livy
     image: panovvv/livy:2.5.2
 #    build: '../livy-docker'
     hostname: livy
@@ -176,6 +181,7 @@ services:
       - "zeppelin:172.28.1.5"
 
   zeppelin:
+    container_name: spark-zeppelin
     image: panovvv/zeppelin-bigdata:2.5.2
 #    build: '../zeppelin-bigdata-docker'
     hostname: zeppelin
